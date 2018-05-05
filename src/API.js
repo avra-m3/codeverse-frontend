@@ -43,6 +43,17 @@ class API {
       })
     }
 
+    getChallengeByID(id, callback){
+        axios.get(this.config().baseURL + "/challenges/" + id).then(
+            (response) => {
+                if(response.status !== 200){
+                    return
+                }
+                callback(response.data)
+            }
+        )
+    }
+
 
     getUsers(callback) {
         axios.get(this.config().baseURL+"/users/1")
@@ -55,7 +66,11 @@ class API {
 
 
     createUser(userId, firstName, lastName) {
-        axios.put(this.config().baseURL+"/users/"+userId, {'firstname': firstName, 'lastname':lastName})
+
+      const splitFirstName = firstName.split(' ')[0]
+      const splitLastName = firstName.split(' ')[1]
+
+        axios.put(this.config().baseURL+"/users/"+userId, {'firstname': splitFirstName, 'lastname':splitLastName})
             .then(response => {
                 const userId = response.data
                 console.log(userId)
@@ -68,7 +83,10 @@ class API {
 
 
     createChallenge(problemID, created) {
-        axios.put(this.config().baseURL+"/challenges/", {'problem_id': 1})
+
+      const generatedProblemID = Math.floor(Math.random() * 3) + 1;
+
+        axios.put(this.config().baseURL+"/challenges/", {'problem_id': generatedProblemID})
             .then(response => {
                 // const userId = response.data
                 // console.log(userId)
