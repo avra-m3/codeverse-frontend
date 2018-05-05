@@ -12,6 +12,44 @@ firebase.initializeApp(config);
 
 class FireBase {
 
+    constructor(editorId){
+        this.db = firebase.database();
+        this.editorId = editorId;
+        this.editorValues = this.db.ref("editor_values");
+        console.log(this.editorValues)
+        this.editorValues.child(this.editorId).once("value", function (snapshot) {
+            console.log(snapshot.val());
+        });
+
+    }
+
+    codeUpdate(e){
+
+        // Don't try to send a firebase query while one is currently pending
+        this.editorValues.child(this.editorId).update({
+            content: e
+        });
+
+    }
+
+
+    codeListen(updateFunction){
+        var partnerContents = this.editorValues.child(this.editorId);
+
+        partnerContents.on("value", (function(snapshot){
+
+            console.log("READ TRIGGERED");
+            console.log(updateFunction)
+
+
+            if (typeof snapshot.val().content === 'string' || snapshot.val().content instanceof String) {
+              updateFunction(snapshot.val().content)
+            }
+
+
+        }));
+    }
+
 
 
 }
