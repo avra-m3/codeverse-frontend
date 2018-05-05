@@ -49,7 +49,7 @@ class CodePage extends Component {
 
             </Box>
             <Box w={1/2} p={3}>
-            <h1 className="collaborator-intro">Angela&apos;s Code</h1>
+            <h1 className="collaborator-intro">Gandalf&apos;s Code</h1>
               <CodePanel
                 notify={this.notify}
               />

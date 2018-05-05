@@ -8,7 +8,6 @@ import '../LoginPage.css'
 import '../css/fontawesome-all.min.css'
 
 import UserImage from '../images/angela.png';
-import CodePanel from '../components/CodePanel.js';
 // import LoadingButton from '../components/LoadingButton'
 
 

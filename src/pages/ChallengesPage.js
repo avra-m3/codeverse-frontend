@@ -3,7 +3,6 @@ import ChallengeBox from '../components/ChallengeBox.js';
 
 import API from '../API.js';
 
-import { BrowserView, MobileView, isBrowser, isMobile } from "react-device-detect";
 
 
 class ChallengesPage extends Component {
@@ -35,7 +34,7 @@ class ChallengesPage extends Component {
       <div className="App">
 
         <div className="container">
-  
+
 
           <ChallengeBox></ChallengeBox>
           <ChallengeBox></ChallengeBox>

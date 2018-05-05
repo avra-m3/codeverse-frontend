@@ -74,14 +74,12 @@ class CodePanel extends Component {
       <Flex  p={1} align='center'>
 
       <Box w={1/6}>
-      <img src={UserImage} height="50vh"/>
+      <img className="avatar" src={UserImage} height="50vh"/>
       </Box>
-      <Box w={1/3} >
-        <a className="btn-join">Angela Smith</a>
+      <Box w={2/3} >
+        <a className="btn-join">Gandalf Whizard</a>
       </Box>
-      <Box w={1/3} >
-
-      </Box>
+  
 
       </Flex>
 
