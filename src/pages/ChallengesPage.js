@@ -26,17 +26,16 @@ class ChallengesPage extends Component {
         state.challenges = challenges;
         return state;
       });
-
-      this.api.getProblems((problems) => {
-        console.log(problems)
-        this.setState( (state) => {
-          state.problems = problems
-          state.loaded = true
-          return state
-        })
-
-
+    })
+    
+    this.api.getProblems((problems) => {
+      console.log(problems)
+      this.setState( (state) => {
+        state.problems = problems
+        state.loaded = true
+        return state
       })
+
 
     })
 
