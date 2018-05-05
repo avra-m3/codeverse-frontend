@@ -110,3 +110,8 @@ body {
 	color: #29B35B;
 	padding-bottom: 5px;
 }
+
+.mobileWarning {
+	text-align: center;
+	padding: 5vw;
+}

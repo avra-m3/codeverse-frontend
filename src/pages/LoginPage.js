@@ -13,12 +13,35 @@ import CodePanel from '../components/CodePanel.js';
 
 
 import FBLoginBtn from '../images/login.png'
+import FireBaseAuthenticator from '../FirebaseAuth.js'
+
+import login01 from '../images/login01.svg'
+import login02 from '../images/login02.svg'
+import login03 from '../images/login03.svg'
 
 class LoginPage extends Component {
 
   constructor (props) {
     super()
     this.props = props;
+    this.state = {};
+    this.authenticator = new FireBaseAuthenticator
+
+    this.handleLogin = this.handleLogin.bind(this);
+    this.goToChallenges = this.goToChallenges.bind(this);
+  }
+
+  goToChallenges() {
+    this.props.history.push('/')
+  }
+
+  handleLogin() {
+    this.authenticator.authenticate((isAuthenticated) => {
+      if(isAuthenticated) {
+        this.goToChallenges()
+      }
+    })
+
 
   }
 
@@ -29,23 +52,38 @@ class LoginPage extends Component {
           <div className="container">
             <Flex p={2} align='left'>
                 <Box className="left-box" px={2} w={1/2}>
-                    <p align="center">CodeVerse</p>
-                    <iframe width="100%" height="80%" src="https://www.youtube.com/embed/evef8FCK6wk?autoplay=1&iv_load_policy=3" frameBorder="0"
-                            allow="autoplay; encrypted-media" allowFullScreen></iframe>
+                    <h1>CodeVerse</h1>
+                    <Flex className="featureRow" >
+                        <Box w={1/3}>
+                          <img src={login01}/>
+                        </Box>
+                        <Box w={2/3}>
+                          <h2>Collaborative Coding</h2>
+                        </Box>
+                    </Flex>
+                    <Flex className="featureRow">
+                        <Box w={1/3}>
+                          <img src={login02}/>
+                        </Box>
+                        <Box w={2/3}>
+                          <h2>Real-time building</h2>
+                        </Box>
+                    </Flex>
+                    <Flex className="featureRow">
+                        <Box w={1/3}>
+                          <img src={login03}/>
+                        </Box>
+                        <Box w={2/3}>
+                          <h2>Friendship & Skill matching</h2>
+                        </Box>
+                    </Flex>
                 </Box>
-                <Box className="right-box" px={2} w={1/2}>
-                    <Box className="right-top-box" px={2} w={1}>
-                        {/*<p align="center"><i className="fab fa-facebook-square"></i>Sign in via Facebook</p>*/}
-                        <p align="center"><img src={FBLoginBtn} width="400vw"/></p>
-                        {/*<LoadingButton className={""}>rf31r31r31r31</LoadingButton>*/}
-                    </Box>
-                    <Box className="right-bottom-box" px={2} w={1}>
-                        <form onSubmit={this.handleSubmit}>
-                            <p align="center"><label>Login: <input type="text"/></label></p>
-                            <p align="center"><label>Password: <input type="text"/></label></p>
-                            <p align="center"><input class="btn-join" type="submit" value="submit"/></p>
-                        </form>
-                    </Box>
+
+
+                <Box className="right-box" px={1} w={1/2}>
+
+                        <img src={FBLoginBtn} onClick={() => {this.handleLogin()}} width="400vw"/>
+
                 </Box>
 
             </Flex>
