@@ -36,6 +36,17 @@ class API {
       })
     }
 
+    getChallengeByID(id, callback){
+        axios.get(this.config().baseURL + "/challenges/" + id).then(
+            (response) => {
+                if(response.status !== 200){
+                    return
+                }
+                callback(response.data)
+            }
+        )
+    }
+
 
     getUsers(callback) {
         axios.get(this.config().baseURL+"/users/1")
