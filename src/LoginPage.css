@@ -1,15 +1,23 @@
 .left-box{
     background-color: #29B35B;
     color: #FFFFFF;
-    height: 70vh;
+    height: 80vh;
     margin-right: 5vh;
     border-radius: 11px;
 }
 
+.left-box h1 {
+  text-align: center;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
 .right-box{
-    height: 70vh;
+    height: 25vh;
     background: #DBDBDB;
     border-radius: 11px;
+    line-height: 30vh;
+    text-align: center;
 }
 
 .right-top-box{
@@ -24,4 +32,11 @@
 p{
     font-family: "Open Sans";
     font-size: 20pt;
+}
+
+
+/* James */
+.featureRow {
+  height: 25vh;
+  line-height: 25vh;
 }

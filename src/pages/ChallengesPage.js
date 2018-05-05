@@ -3,6 +3,8 @@ import ChallengeBox from '../components/ChallengeBox.js';
 
 import API from '../API.js';
 
+
+
 class ChallengesPage extends Component {
 
 
@@ -25,8 +27,15 @@ class ChallengesPage extends Component {
 
 
     return (
+
+
+
+
       <div className="App">
+
         <div className="container">
+
+
           <ChallengeBox></ChallengeBox>
           <ChallengeBox></ChallengeBox>
         </div>

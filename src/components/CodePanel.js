@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Flex, Box } from 'reflexbox';
-import UserImage from '../images/angela.png';
+import UserImage from '../images/codeverse-gandalf.gif';
+import '../css/CodePanel.css'
 
 import { Link } from 'react-router-dom';
 
@@ -59,7 +60,7 @@ class CodePanel extends Component {
 
       </Box>
       <Box w={1/3} >
-      <a className="btn-join">Run > </a>
+      <button onClick={() => {this.props.notify("Running Tests 😀")}} className="btn-join">Run > </button>
       </Box>
 
       </Flex>
@@ -73,14 +74,12 @@ class CodePanel extends Component {
       <Flex  p={1} align='center'>
 
       <Box w={1/6}>
-      <img src={UserImage} height="50vh"/>
+      <img className="avatar" src={UserImage} height="50vh"/>
       </Box>
-      <Box w={1/3} >
-        <a className="btn-join">Angela Smith</a>
+      <Box w={2/3} >
+        <a className="btn-join">Gandalf Whizard</a>
       </Box>
-      <Box w={1/3} >
-
-      </Box>
+  
 
       </Flex>
 
@@ -136,7 +135,7 @@ class CodePanel extends Component {
             PASSED
           </Box>
           <Box w={1/3} className="submitArea">
-            <a className="btn-join" hidden={!this.props.isCurrentUser}>Submit</a>
+            <button className="btn-join" onClick={() => {this.props.notify("Submitted")}} hidden={!this.props.isCurrentUser}>Submit</button>
           </Box>
 
           </Flex>
