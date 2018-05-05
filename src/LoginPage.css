@@ -1,7 +1,3 @@
-Box{
-
-}
-
 .left-box{
     background-color: #29B35B;
     color: #FFFFFF;
@@ -28,8 +24,4 @@ Box{
 p{
     font-family: "Open Sans";
     font-size: 20pt;
-}
-
-textarea{
-    width:80%;
 }
