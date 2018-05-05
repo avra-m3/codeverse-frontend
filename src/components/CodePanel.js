@@ -89,9 +89,8 @@ class CodePanel extends Component {
           showPrintMargin={true}
           showGutter={true}
           highlightActiveLine={true}
-          value={`function onLoad(editor) {
-  console.log("i've loaded");
-}`}
+          value={`//Type your code here...
+            `}
           setOptions={{
             enableBasicAutocompletion: true,
             enableLiveAutocompletion: true,
