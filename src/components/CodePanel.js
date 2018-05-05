@@ -13,7 +13,8 @@ import 'react-dropdown/style.css'
 import Firebase from '../Firebase.js';
 
 
-import Confetti from 'react-dom-confetti';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const options = [
   { value: 'javascript', label: 'JavaScript' },
@@ -30,14 +31,7 @@ class CodePanel extends Component {
     this.state = {testStatus: "Not Run"}
     this.fbListener = new Firebase('testcode2')
 
-    this.confettiConfig = {
-  angle: 90,
-  spread: 45,
-  startVelocity: 45,
-  elementCount: 50,
-  decay: 0.9
-};
-
+    this.notify = this.notify.bind(this);
 
     if(!this.props.isCurrentUser) {
       this.updateCalled = this.updateCalled.bind(this);
@@ -67,8 +61,7 @@ class CodePanel extends Component {
 
       </Box>
       <Box w={1/3} >
-      <button onClick={() => {this.props.notify("Running Tests 😀")}} className="btn-join">Run > </button>
-      <Confetti active={ this.isCompleted } config={ this.confettiConfig }/>
+      <button onClick={() => {this.notify("Running Tests 😀")}} className="btn-join">Run > </button>
       </Box>
 
       </Flex>
@@ -102,13 +95,27 @@ class CodePanel extends Component {
 
   }
 
+
+  updateTestStatus(newStatus) {
+    this.setState( (state) => {
+        state.testStatus = newStatus;
+        return state;
+    });
+  }
+
+  notify = (message) => toast(message, {
+      onOpen: () => this.updateTestStatus("Running..."),
+      onClose: () => this.updateTestStatus("PASSED")
+    });
+
+
+
   render() {
     return(
       <div className="stats-box">
 
         {this.getTopBox()}
 
-        <Confetti active={ this.props.completed } />
         <AceEditor
           width="100%"
           height="40vh"
@@ -141,12 +148,12 @@ class CodePanel extends Component {
           <Box w={1/3}>
             Executed in 11ms
           </Box>
-          <Box w={1/3} className={"testcase-result-"+this.state.testStatus}>
+          <Box w={1/3} className={"testcase-result-"+this.state.testStatus.toLowerCase()}>
             {this.state.testStatus}
           </Box>
           <Box w={1/3} className="submitArea">
 
-            <button className="btn-join" onClick={() => {this.props.notify("Submitted")}} hidden={!this.props.isCurrentUser}>Submit</button>
+            <button className="btn-join" onClick={() => {this.notify("Submitted")}} hidden={!this.props.isCurrentUser}>Submit</button>
           </Box>
 
           </Flex>
