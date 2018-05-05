@@ -48,7 +48,7 @@ class CodePage extends Component {
 
     return (
       <div className="App">
-      <ToastContainer />
+      <ToastContainer autoClose={4000} />
         <div className="container">
 
 
