@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Flex, Box } from 'reflexbox';
-import UserImage from '../images/angela.png';
+import UserImage from '../images/codeverse-gandalf.gif';
+import '../css/CodePanel.css'
 
 import { Link } from 'react-router-dom';
 
