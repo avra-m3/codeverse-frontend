@@ -11,9 +11,12 @@ import 'brace/theme/monokai';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
+import Firebase from '../Firebase.js';
+
+
 
 const options = [
-  { value: 'javascript', label: 'Python' },
+  { value: 'javascript', label: 'JavaScript' },
 ]
 
 const defaultOption = options[0]
@@ -24,6 +27,22 @@ class CodePanel extends Component {
   constructor(props) {
     super()
     this.props = props
+    this.state = {}
+    this.fbListener = new Firebase('testcode2')
+
+
+    if(!this.props.isCurrentUser) {
+      this.updateCalled = this.updateCalled.bind(this);
+      this.fbListener.codeListen(this.updateCalled)
+    }
+  }
+
+  updateCalled(updateText) {
+    console.log("Updating text to"+updateText)
+    this.setState( (state) => {
+        state.theirText = updateText;
+        return state;
+    });
   }
 
   getTopBox(props) {
@@ -70,9 +89,15 @@ class CodePanel extends Component {
     }
   }
 
+  onChange() {
+    // Here we probably want to call Firebase
+
+
+  }
+
   render() {
     return(
-      <div  lassName="stats-box">
+      <div className="stats-box">
 
         {this.getTopBox()}
 
@@ -84,13 +109,12 @@ class CodePanel extends Component {
           theme="monokai"
           name="blah2"
           onLoad={this.onLoad}
-          onChange={this.onChange}
+          onChange={this.props.onChange}
           fontSize={14}
           showPrintMargin={true}
           showGutter={true}
           highlightActiveLine={true}
-          value={`//Type your code here...
-            `}
+          value={this.state.theirText}
           setOptions={{
             enableBasicAutocompletion: true,
             enableLiveAutocompletion: true,
