@@ -33,7 +33,7 @@ class CodePage extends Component {
             <Box w={1/2} p={3}>
               <CodePanel
                 isCurrentUser={true}
-                onChange={this.firebase.codeUpdate}
+                onChange={this.firebase.codeUpdate.bind(this.firebase)}
               />
 
             </Box>
