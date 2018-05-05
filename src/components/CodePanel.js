@@ -28,11 +28,13 @@ class CodePanel extends Component {
     super()
     this.props = props
     this.state = {}
-    this.fbListener = new Firebase('testcode')
+    this.fbListener = new Firebase('testcode2')
 
 
-    this.updateCalled = this.updateCalled.bind(this);
-    this.fbListener.codeListen(this.updateCalled)
+    if(!this.props.isCurrentUser) {
+      this.updateCalled = this.updateCalled.bind(this);
+      this.fbListener.codeListen(this.updateCalled)
+    }
   }
 
   updateCalled(updateText) {

@@ -40,7 +40,13 @@ class FireBase {
 
             console.log("READ TRIGGERED");
             console.log(updateFunction)
-            updateFunction(snapshot.val().content)
+
+
+            if (typeof snapshot.val().content === 'string' || snapshot.val().content instanceof String) {
+              updateFunction(snapshot.val().content)
+            }
+
+
         }));
     }
 

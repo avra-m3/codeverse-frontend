@@ -43,7 +43,6 @@ class CodePage extends Component {
             </Box>
             <Box w={1/2} p={3}>
               <CodePanel
-              value={this.listenerCode}
               />
             </Box>
 
