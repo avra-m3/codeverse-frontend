@@ -56,6 +56,16 @@ class API {
     }
 
 
+    createChallenge(problemID, created) {
+        axios.put(this.config().baseURL+"/challenges/", {'problem_id': 1})
+            .then(response => {
+                // const userId = response.data
+                // console.log(userId)
+                created()
+            })
+    }
+
+
 }
 
 export default API;

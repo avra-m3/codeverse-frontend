@@ -29,6 +29,7 @@ class CodePage extends Component {
   constructor (props) {
     super()
     this.props = props
+    this.state = {};
     this.state = this.props.location.state;
 
     this.firebase = new Firebase('testcode')

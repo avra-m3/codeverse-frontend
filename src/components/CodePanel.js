@@ -29,7 +29,7 @@ class CodePanel extends Component {
   constructor(props) {
     super()
     this.props = props
-    this.state = {}
+    this.state = {testStatus: "Not Run"}
     this.fbListener = new Firebase('testcode2')
 
     this.confettiConfig = {
@@ -143,8 +143,8 @@ class CodePanel extends Component {
           <Box w={1/3}>
             Executed in 11ms
           </Box>
-          <Box w={1/3} className="testcase-result-passed">
-            PASSED
+          <Box w={1/3} className={"testcase-result-"+this.state.testStatus}>
+            {this.state.testStatus}
           </Box>
           <Box w={1/3} className="submitArea">
 

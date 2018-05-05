@@ -19,6 +19,13 @@ class ChallengesPage extends Component {
     this.updateUI()
   }
 
+  doLoad() {
+    this.setState( (state) => {
+      state.loaded = false
+      return state
+    })
+  }
+
   updateUI() {
     this.api.getChallenges((challenges) => {
       console.log(challenges)
@@ -27,7 +34,7 @@ class ChallengesPage extends Component {
         return state;
       });
     })
-    
+
     this.api.getProblems((problems) => {
       console.log(problems)
       this.setState( (state) => {
@@ -80,6 +87,8 @@ class ChallengesPage extends Component {
         <div className="container">
           {this.getChallengeBoxes()}
           {this.getLoader()}
+
+          <button hidden={!this.state.loaded} disabled={!this.state.loaded} onClick={() => {this.doLoad(); this.api.createChallenge(1, () => {this.updateUI() })}} className="btn-join">Create Challenge</button>
         </div>
       </div>
     );
