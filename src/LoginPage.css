@@ -1,13 +1,15 @@
 .left-box{
-    background-color: green;
-    color: white;
+    background-color: #29B35B;
+    color: #FFFFFF;
     height: 70vh;
     margin-right: 5vh;
+    border-radius: 11px;
 }
 
 .right-box{
     height: 70vh;
-    background: red;
+    background: #DBDBDB;
+    border-radius: 11px;
 }
 
 .right-top-box{
@@ -22,8 +24,4 @@
 p{
     font-family: "Open Sans";
     font-size: 20pt;
-}
-
-textarea{
-    width:80%;
 }
