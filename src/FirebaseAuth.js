@@ -18,7 +18,7 @@ class FireBaseAuthenticator extends React.Component {
       // The signed-in user info.
       var user = result.user;
       // ...
-      var api = new API
+      var api = new API()
 
       console.log("AUTHENTICATED")
       console.log(token)
@@ -38,12 +38,12 @@ class FireBaseAuthenticator extends React.Component {
       console.log("AUTH ERROR")
       console.log(error)
       // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
+      // var errorCode = error.code;
+      // var errorMessage = error.message;
+      // // The email of the user's account used.
+      // var email = error.email;
+      // // The firebase.auth.AuthCredential type that was used.
+      // var credential = error.credential;
       // ...
 
       didAuthenticate(false)

@@ -1,21 +1,15 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-
-import axios from 'axios'
 
 import { Flex, Box } from 'reflexbox';
 
 
 
-import UserImage from '../images/angela.png';
 import CodePanel from '../components/CodePanel.js';
 import Firebase from '../Firebase.js';
 import API from '../API.js';
 
 import { ToastContainer, toast } from 'react-toastify';
 import '../css/toast.css';
-
-import Confetti from 'react-dom-confetti';
 
 
 

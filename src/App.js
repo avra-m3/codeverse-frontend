@@ -26,7 +26,7 @@ const App = () => (
       </BrowserView>
       <MobileView device={isMobile}>
         <div className="mobileWarning">
-          <img src={ArmChair}/>
+          <img src={ArmChair} alt="" />
           <h1> Coding is more comfortable on your laptop. </h1>
         </div>
       </MobileView>

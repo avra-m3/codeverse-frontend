@@ -3,8 +3,6 @@ import { Flex, Box } from 'reflexbox';
 import UserImage from '../images/codeverse-gandalf.gif';
 import '../css/CodePanel.css'
 
-import { Link } from 'react-router-dom';
-
 //Code Editor
 import AceEditor from 'react-ace';
 import 'brace/mode/javascript';
@@ -84,7 +82,7 @@ class CodePanel extends Component {
       <Flex  p={1} align='center'>
 
       <Box w={1/6}>
-      <img className="avatar" src={UserImage} height="50vh"/>
+      <img className="avatar" src={UserImage} alt="User" height="50vh"/>
       </Box>
       <Box w={2/3} >
         <a className="btn-join">Gandalf Whizard</a>

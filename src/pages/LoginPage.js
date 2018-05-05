@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
-
-import axios from 'axios'
 
 import { Flex, Box } from 'reflexbox';
 import '../LoginPage.css'
 import '../css/fontawesome-all.min.css'
 
-import UserImage from '../images/angela.png';
 // import LoadingButton from '../components/LoadingButton'
 
 
@@ -24,7 +20,7 @@ class LoginPage extends Component {
     super()
     this.props = props;
     this.state = {};
-    this.authenticator = new FireBaseAuthenticator
+    this.authenticator = new FireBaseAuthenticator()
 
     this.handleLogin = this.handleLogin.bind(this);
     this.goToChallenges = this.goToChallenges.bind(this);
@@ -54,7 +50,7 @@ class LoginPage extends Component {
                     <h1>CodeVerse</h1>
                     <Flex className="featureRow" >
                         <Box w={1/3}>
-                          <img src={login01}/>
+                          <img src={login01} alt="" />
                         </Box>
                         <Box w={2/3}>
                           <h2>Collaborative Coding</h2>
@@ -62,7 +58,7 @@ class LoginPage extends Component {
                     </Flex>
                     <Flex className="featureRow">
                         <Box w={1/3}>
-                          <img src={login02}/>
+                          <img src={login02} alt="" />
                         </Box>
                         <Box w={2/3}>
                           <h2>Real-time building</h2>
@@ -70,7 +66,7 @@ class LoginPage extends Component {
                     </Flex>
                     <Flex className="featureRow">
                         <Box w={1/3}>
-                          <img src={login03}/>
+                          <img src={login03} alt="" />
                         </Box>
                         <Box w={2/3}>
                           <h2>Friendship & Skill matching</h2>
@@ -81,7 +77,7 @@ class LoginPage extends Component {
 
                 <Box className="right-box" px={1} w={1/2}>
 
-                        <img src={FBLoginBtn} onClick={() => {this.handleLogin()}} width="400vw"/>
+                        <img src={FBLoginBtn} alt="Login" onClick={() => {this.handleLogin()}} width="400vw"/>
 
                 </Box>
 
