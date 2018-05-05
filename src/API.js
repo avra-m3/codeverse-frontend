@@ -10,7 +10,7 @@ class API {
     }
 
     getChallenges(callback) {
-      axios.get(this.config().baseURL+"/test.php")
+      axios.get(this.config().baseURL+"/")
            .then(response => {
               const challenges = response.data
               console.log(challenges)
