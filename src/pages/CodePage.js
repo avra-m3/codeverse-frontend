@@ -19,7 +19,6 @@ class CodePage extends Component {
     super()
     this.firebase = new Firebase('testcode')
 
-    this.firebaseListener = new Firebase('testcode')
 
     this.props = props;
 
