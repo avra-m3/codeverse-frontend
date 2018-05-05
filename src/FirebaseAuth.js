@@ -1,4 +1,5 @@
 import React from 'react';
+import API from './API.js';
 
 var firebase = require("firebase");
 
@@ -17,10 +18,20 @@ class FireBaseAuthenticator extends React.Component {
       // The signed-in user info.
       var user = result.user;
       // ...
+      var api = new API
 
       console.log("AUTHENTICATED")
       console.log(token)
       console.log(user)
+
+      api.getUsers( (users) => {
+      })
+
+      api.createUser(user.uid, user.displayName, '')
+      localStorage.setItem('userId', user.userId)
+      localStorage.setItem('photoURL', user.photoURL)
+      localStorage.setItem('displayName', user.displayName)
+
       didAuthenticate(true)
 
     }).catch(function(error) {
