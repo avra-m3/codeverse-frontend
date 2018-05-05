@@ -116,3 +116,27 @@ body {
 	text-align: center;
 	padding: 5vw;
 }
+
+.code-description {
+	color: #ffffff;
+	background-color: #304D4B;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+
+	margin-top: 4vh;
+	margin-left: 4vw;
+	margin-right: 4vw;
+
+	border-radius: 11px;
+}
+
+
+/* Loader */
+.loader {
+	text-align: center;
+	height: 20vh;
+	margin: 0 auto;
+
+}

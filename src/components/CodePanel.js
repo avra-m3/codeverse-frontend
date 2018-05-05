@@ -15,6 +15,7 @@ import 'react-dropdown/style.css'
 import Firebase from '../Firebase.js';
 
 
+import Confetti from 'react-dom-confetti';
 
 const options = [
   { value: 'javascript', label: 'JavaScript' },
@@ -30,6 +31,14 @@ class CodePanel extends Component {
     this.props = props
     this.state = {}
     this.fbListener = new Firebase('testcode2')
+
+    this.confettiConfig = {
+  angle: 90,
+  spread: 45,
+  startVelocity: 45,
+  elementCount: 50,
+  decay: 0.9
+};
 
 
     if(!this.props.isCurrentUser) {
@@ -61,6 +70,7 @@ class CodePanel extends Component {
       </Box>
       <Box w={1/3} >
       <button onClick={() => {this.props.notify("Running Tests 😀")}} className="btn-join">Run > </button>
+      <Confetti active={ this.isCompleted } config={ this.confettiConfig }/>
       </Box>
 
       </Flex>
@@ -79,7 +89,7 @@ class CodePanel extends Component {
       <Box w={2/3} >
         <a className="btn-join">Gandalf Whizard</a>
       </Box>
-  
+
 
       </Flex>
 
@@ -100,9 +110,10 @@ class CodePanel extends Component {
 
         {this.getTopBox()}
 
+        <Confetti active={ this.props.completed } />
         <AceEditor
           width="100%"
-          height="50vh"
+          height="40vh"
           readOnly={!this.props.isCurrentUser}
           mode="javascript"
           theme="monokai"
@@ -126,6 +137,7 @@ class CodePanel extends Component {
 
 
         <div className="session-testcases-info">
+
           <Flex align='center'>
 
           <Box w={1/3}>
@@ -135,6 +147,7 @@ class CodePanel extends Component {
             PASSED
           </Box>
           <Box w={1/3} className="submitArea">
+
             <button className="btn-join" onClick={() => {this.props.notify("Submitted")}} hidden={!this.props.isCurrentUser}>Submit</button>
           </Box>
 
