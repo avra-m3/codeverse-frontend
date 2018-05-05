@@ -36,8 +36,8 @@ class LoginPage extends Component {
                     </Box>
                     <Box className="right-bottom-box" px={2} w={1}>
                         <form onSubmit={this.handleSubmit}>
-                            <p align="center"><textarea>test</textarea></p>
-                            <p align="center"><textarea>test1</textarea></p>
+                            <p align="center"><input type="text"/></p>
+                            <p align="center"><input type="text"/></p>
                             <p align="center"><input class="btn-join" type="submit" value="submit"/></p>
                         </form>
                     </Box>
