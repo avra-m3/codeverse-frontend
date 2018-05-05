@@ -53,6 +53,10 @@ class API {
                 const userId = response.data
                 console.log(userId)
             })
+            .catch(function (error) {
+                console.log("User create failed, probably already exists?");
+                console.log(error);
+            });
     }
 
 
@@ -64,6 +68,20 @@ class API {
                 created()
             })
     }
+
+    createCollab(challengeId, userId) {
+        axios.put(this.config().baseURL+"/challenges/"+challengeId+"/collaborators/"+userId, {'stream': ''})
+            .then(response => {
+                console.log("CREATED COLLAB")
+                console.log(response)
+            })
+            .catch(function (error) {
+                console.log("collab failed, probably not 'waiting' status?");
+                console.log(error);
+            });
+
+    }
+
 
 
 }

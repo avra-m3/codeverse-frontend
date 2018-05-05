@@ -27,7 +27,8 @@ class FireBaseAuthenticator extends React.Component {
       api.getUsers( (users) => {
       })
 
-      api.createUser(user.uid, user.displayName, '')
+      //api.createUser(user.uid, user.displayName, '')
+      api.createCollab(3, user.uid)
       localStorage.setItem('userId', user.userId)
       localStorage.setItem('photoURL', user.photoURL)
       localStorage.setItem('displayName', user.displayName)
