@@ -24,6 +24,8 @@ class CodePanel extends Component {
   constructor(props) {
     super()
     this.props = props
+    console.log("Props from within CodePanel, should have onChange method in firebase class");
+    console.log(this.props)
   }
 
   getTopBox(props) {
@@ -70,9 +72,15 @@ class CodePanel extends Component {
     }
   }
 
+  onChange() {
+    // Here we probably want to call Firebase
+    
+
+  }
+
   render() {
     return(
-      <div  lassName="stats-box">
+      <div  className="stats-box">
 
         {this.getTopBox()}
 
@@ -84,7 +92,7 @@ class CodePanel extends Component {
           theme="monokai"
           name="blah2"
           onLoad={this.onLoad}
-          onChange={this.onChange}
+          onChange={this.props.onChange}
           fontSize={14}
           showPrintMargin={true}
           showGutter={true}

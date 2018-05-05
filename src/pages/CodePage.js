@@ -9,6 +9,7 @@ import { Flex, Box } from 'reflexbox';
 
 import UserImage from '../images/angela.png';
 import CodePanel from '../components/CodePanel.js';
+import Firebase from '../Firebase.js';
 
 
 
@@ -22,6 +23,9 @@ class CodePage extends Component {
 
 
   render() {
+
+    console.log("The below should log the firebase class, including callback onchange func");
+    console.log(Firebase)
     return (
       <div className="App">
         <div className="container">
@@ -30,6 +34,7 @@ class CodePage extends Component {
             <Box w={1/2} p={3}>
               <CodePanel
                 isCurrentUser={true}
+                onChange={Firebase.codeUpdate}
               />
 
             </Box>

@@ -12,6 +12,11 @@ firebase.initializeApp(config);
 
 class FireBase {
 
+    codeUpdate(){
+        console.log("Sending code to Firebase");
+
+    }
+
 
 
 }
