@@ -20,7 +20,6 @@ class CodePage extends Component {
     this.firebase = new Firebase('testcode')
 
     this.firebaseListener = new Firebase('testcode')
-    this.firebaseListener.codeListen()
 
     this.props = props;
 
@@ -37,12 +36,14 @@ class CodePage extends Component {
             <Box w={1/2} p={3}>
               <CodePanel
                 isCurrentUser={true}
+                value={`//Type your code here...`}
                 onChange={this.firebase.codeUpdate.bind(this.firebase)}
               />
 
             </Box>
             <Box w={1/2} p={3}>
               <CodePanel
+              value={this.listenerCode}
               />
             </Box>
 

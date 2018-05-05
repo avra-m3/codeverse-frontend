@@ -33,12 +33,14 @@ class FireBase {
     }
 
 
-    codeListen(){
+    codeListen(updateFunction){
         var partnerContents = this.editorValues.child(this.editorId);
 
         partnerContents.on("value", (function(snapshot){
+
             console.log("READ TRIGGERED");
-            console.log(snapshot.val());
+            console.log(updateFunction)
+            updateFunction(snapshot.val().content)
         }));
     }
 
