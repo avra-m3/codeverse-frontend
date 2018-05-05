@@ -104,3 +104,9 @@ body {
 .submitArea {
 	text-align: right;
 }
+
+.collaborator-intro {
+	text-align: center;
+	color: #29B35B;
+	padding-bottom: 5px;
+}

@@ -4,7 +4,7 @@ class API {
 
     config() {
       return {
-          "baseURL": "http://example.com"
+          "baseURL": "http://codeverse.herokuapp.com"
         }
     }
 

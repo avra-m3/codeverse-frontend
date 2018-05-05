@@ -28,12 +28,14 @@ class CodePage extends Component {
           <Flex p={3} align='center'>
 
             <Box w={1/2} p={3}>
+              <h1 className="collaborator-intro">My Code</h1>
               <CodePanel
                 isCurrentUser={true}
               />
 
             </Box>
             <Box w={1/2} p={3}>
+            <h1 className="collaborator-intro">Angela&apos;s Code</h1>
               <CodePanel
               />
             </Box>

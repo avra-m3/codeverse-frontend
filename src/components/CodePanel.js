@@ -28,8 +28,8 @@ class CodePanel extends Component {
 
   getTopBox(props) {
     if(this.props.isCurrentUser) {
-      return(<div className="session-user-info">
-
+      return(
+        <div className="session-user-info">
 
       <Flex  p={2} align='center'>
 
