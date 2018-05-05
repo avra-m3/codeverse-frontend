@@ -1,28 +1,106 @@
-.App {
-  text-align: center;
+/* Reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+/* All Pages */
+body {
+  background-color: #EFF1F3;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.nav {
+  background-color: #ffffff;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  top: 0;
+}
+.nav h1 a {
+  color: #29B35B;
+	text-decoration: none;
 }
 
-.App-title {
-  font-size: 1.5em;
+
+
+.container {
+	padding-left: 5vw;
+	padding-right: 5vw;
 }
 
-.App-intro {
-  font-size: large;
+
+/* Challenges */
+.challengeBox {
+	background-color: #29B35B;
+	margin-top: 2vh;
+	height: 150px;
+	color: #fff;
+	border-radius: 11px;
+	text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.btn-join {
+	background-color: #65C086;
+	/* padding-top: 10px; */
+	padding: 10px 30px 10px 30px;
+	border-radius: 95px;
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/* Code Page */
+.stats-box {
+	height: 50vh;
+}
+
+.session-user-info {
+	background-color: #29B35B;
+	text-align: center;
+	height: 10vh;
+	border-top-left-radius: 11px;
+	border-top-right-radius: 11px;
+}
+
+.session-testcases-info {
+	background-color: #304D4B;
+	padding-left: 2vw;
+	padding-right: 2vw;
+	height: 10vh;
+	line-height: 10vh;
+	border-bottom-left-radius: 11px;
+	border-bottom-right-radius: 11px;
+	color: #ffffff;
+}
+
+.testcase-result-passed {
+	color: #00FF00;
+	font-weight: bold;
+	text-align: center;
+}
+
+.testcase-result-failed {
+	color: #FF0000;
+	font-weight: bold;
+	text-align: center;
+}
+
+.submitArea {
+	text-align: right;
 }
