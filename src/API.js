@@ -4,19 +4,38 @@ class API {
 
     config() {
       return {
-          "baseURL": "http://codeverse.herokuapp.com",
-          "version": "V1"
+          "baseURL": "http://codeverse.herokuapp.com"
         }
     }
 
     getChallenges(callback) {
-      axios.get(this.config().baseURL+"/")
+      axios.get(this.config().baseURL+"/challenges")
            .then(response => {
               const challenges = response.data
               console.log(challenges)
               callback(challenges)
       })
     }
+
+
+    getProblems(callback) {
+      axios.get(this.config().baseURL+"/problems")
+           .then(response => {
+              const problems = response.data
+              console.log(problems)
+              callback(problems)
+      })
+    }
+
+    getProblemWithID(id, callback) {
+      axios.get(this.config().baseURL+"/problems/"+id)
+           .then(response => {
+              const problem = response.data
+              console.log(problem)
+              callback(problem)
+      })
+    }
+
 
     getUsers(callback) {
         axios.get(this.config().baseURL+"/users/1")
@@ -26,6 +45,7 @@ class API {
                 callback(users)
             })
     }
+
 
     createUser(userId, firstName, lastName) {
         axios.put(this.config().baseURL+"/users/"+userId, {'firstname': firstName, 'lastname':lastName})

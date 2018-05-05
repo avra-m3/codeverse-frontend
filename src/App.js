@@ -22,7 +22,7 @@ const App = () => (
       <BrowserView device={isBrowser}>
         <Route exact path="/" component={ChallengesPage}/>
         <Route path="/login" component={LoginPage}/>
-        <Route path="/code" component={CodePage}/>
+        <Route path="/code/:problemID" component={CodePage}/>
       </BrowserView>
       <MobileView device={isMobile}>
         <div className="mobileWarning">
