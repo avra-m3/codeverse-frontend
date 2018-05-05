@@ -11,6 +11,7 @@ class ChallengesPage extends Component {
 
   constructor (props) {
     super()
+    this.state = {};
     this.props = props;
     this.api = new API
   }
@@ -18,12 +19,12 @@ class ChallengesPage extends Component {
 
   render() {
 
-    this.api.getChallenges(function(challenges){
-      this.setState( (state) => {
-        state.challenges = challenges;
-        return state;
-      });
-    })
+    // this.api.getChallenges((challenges) => {
+    //   this.setState( (state) => {
+    //     state.challenges = challenges;
+    //     return state;
+    //   });
+    // })
 
 
     return (
