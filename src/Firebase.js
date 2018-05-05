@@ -12,8 +12,32 @@ firebase.initializeApp(config);
 
 class FireBase {
 
-    codeUpdate(){
+    constructor(){
+        this.db = firebase.database();
+        this.editorId = "testcode";
+        this.editorValues = this.db.ref("editor_values");
+        console.log(this.editorValues)
+        this.editorValues.child(this.editorId).once("value", function (snapshot) {
+            console.log(snapshot);
+            console.log(snapshot.val());
+                /* {
+                 *         "content": "Hello world. This is how we started this very article. :D",
+                 *                 "lang": "markdown",
+                 *                         "queue": {...}
+                 *                             } */
+        });
+    }
+
+    codeUpdate(e){
         console.log("Sending code to Firebase");
+        console.log(e);
+        console.log(this.editorValues)
+
+        this.editorValues.child(this.editorId).update({
+            content: e
+        });
+
+
 
     }
 

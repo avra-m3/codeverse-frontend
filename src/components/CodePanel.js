@@ -24,8 +24,6 @@ class CodePanel extends Component {
   constructor(props) {
     super()
     this.props = props
-    console.log("Props from within CodePanel, should have onChange method in firebase class");
-    console.log(this.props)
   }
 
   getTopBox(props) {

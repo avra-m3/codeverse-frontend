@@ -25,8 +25,6 @@ class CodePage extends Component {
 
   render() {
 
-    console.log("The below should log the firebase class, including callback onchange func");
-    console.log(this.firebase)
     return (
       <div className="App">
         <div className="container">
@@ -35,7 +33,7 @@ class CodePage extends Component {
             <Box w={1/2} p={3}>
               <CodePanel
                 isCurrentUser={true}
-                onChange={Firebase.codeUpdate}
+                onChange={this.firebase.codeUpdate}
               />
 
             </Box>
