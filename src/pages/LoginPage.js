@@ -27,7 +27,7 @@ class LoginPage extends Component {
   }
 
   goToChallenges() {
-    this.props.history.push('/')
+    this.props.history.push('/challenges')
   }
 
   handleLogin() {

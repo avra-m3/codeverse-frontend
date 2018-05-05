@@ -20,8 +20,9 @@ const App = () => (
     <div>
       <NavigationBar></NavigationBar>
       <BrowserView device={isBrowser}>
-        <Route exact path="/" component={ChallengesPage}/>
+        <Route exact path="/" component={LoginPage}/>
         <Route path="/login" component={LoginPage}/>
+        <Route path="/challenges" component={ChallengesPage}/>
         <Route path="/code/:problemID" component={CodePage}/>
       </BrowserView>
       <MobileView device={isMobile}>
