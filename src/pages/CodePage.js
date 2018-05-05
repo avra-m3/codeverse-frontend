@@ -17,6 +17,7 @@ class CodePage extends Component {
 
   constructor (props) {
     super()
+    this.firebase = new Firebase
     this.props = props;
 
   }
@@ -25,7 +26,7 @@ class CodePage extends Component {
   render() {
 
     console.log("The below should log the firebase class, including callback onchange func");
-    console.log(Firebase)
+    console.log(this.firebase)
     return (
       <div className="App">
         <div className="container">
