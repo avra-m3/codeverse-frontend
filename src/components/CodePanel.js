@@ -12,6 +12,7 @@ import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
 import Firebase from '../Firebase.js';
+import Voice from '../Voice.js';
 
 
 
@@ -29,6 +30,7 @@ class CodePanel extends Component {
     this.props = props
     this.state = {}
     this.fbListener = new Firebase('testcode2')
+    this.voice = new Voice('testcode2')
 
 
     if(!this.props.isCurrentUser) {
@@ -77,6 +79,9 @@ class CodePanel extends Component {
       </Box>
       <Box w={1/3} >
         <a className="btn-join">Angela Smith</a>
+          <button id="call" onClick={() => {window.makeCall()}} >Call</button>
+					<button id="hangup">Hangup</button>
+					<button id="answer">Answer</button>
       </Box>
       <Box w={1/3} >
 
@@ -96,6 +101,7 @@ class CodePanel extends Component {
   }
 
   render() {
+
     return(
       <div className="stats-box">
 

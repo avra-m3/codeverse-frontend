@@ -19,12 +19,16 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <script src="sinch.min.js"></script>
+    <title>CodeVerse</title>
   </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+
+    <audio id="incoming" autoplay></audio>
+
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -36,5 +40,83 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script type="text/javascript">
+      function makeCall() {
+        console.log("MAKING A CALL")
+
+        var sinchClient = new SinchClient({
+          applicationKey: 'd3b69da7-cf98-4409-a725-1334e5cf6776',
+          capabilities: {calling: true},
+          startActiveConnection: true, /* NOTE: This is required if application is to receive calls / instant messages. */
+          //Note: For additional loging, please uncomment the three rows below
+          onLogMessage: function(message) {
+            console.log(message);
+          },
+        });
+
+        var username = "aaaa"
+        var password = "aaaa"
+
+        var loginObject = {username: username, password: password};
+        sinchClient.start(loginObject, function() {
+
+        }).fail(handleError);
+
+
+        var handleError = function(error) {
+      	     console.log(error.message)
+          }
+
+
+        var callClient = sinchClient.getCallClient();
+
+        var callListeners = {
+            onCallEstablished: function(call) {
+              console.log("Call Established")
+              console.log(call)
+                $('audio').attr('src', call.incomingStreamURL); //If audio element has attribute "autoplay"
+            },
+            onCallEnded: function(call) {
+              var callDetails = call.getDetails();
+              console.log("Call Ended")
+              console.log(callDetails)
+            },
+          	onCallProgressing: function(call) {
+              console.log("Progressing")
+              console.log(call)
+            },
+            onIncomingCall: function(call) {
+              console.log("INCOMING CALL")
+              console.log(call)
+            }
+        }
+        //INCOMING CALLS
+
+        // var call = callClient.callConference('CODEVERSE');
+        callClient.addEventListener(callListeners);
+
+
+        call = callClient.callUser("aaaa");
+        // var call = callClient.callUser('bbb');
+
+
+
+      }
+    </script>
+
+
+    <script>
+    window.callMeBack = () => {
+
+
+
+
+    }
+
+
+
+
+    </script>
   </body>
 </html>
