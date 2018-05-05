@@ -52,8 +52,8 @@ class ChallengesPage extends Component {
   getChallengeBoxes() {
     const boxes = [];
     for (var challenge in this.state.challenges) {
-      if(typeof this.state.problems != 'undefined') {
-        const challengeProblem = this.state.problems.filter(problem => problem.Problem_ID == this.state.challenges[challenge].Problem_ID)[0];
+      if(typeof this.state.problems !== 'undefined') {
+        const challengeProblem = this.state.problems.filter(problem => problem.Problem_ID === this.state.challenges[challenge].Problem_ID)[0];
         console.log(challengeProblem)
 
 
