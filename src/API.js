@@ -17,6 +17,13 @@ class API {
       })
     }
 
+    setChallengeStatus(challengeId, status) {
+        axios.post(this.config().baseURL+"/challenges/"+challengeId, {'status': status})
+            .then(response => {
+                console.log("CHALLENGE STATUS CHANGED");
+            })
+    }
+
 
     getProblems(callback) {
       axios.get(this.config().baseURL+"/problems")
