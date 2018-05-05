@@ -1,0 +1,29 @@
+.left-box{
+    background-color: green;
+    color: white;
+    height: 70vh;
+    margin-right: 5vh;
+}
+
+.right-box{
+    height: 70vh;
+    background: red;
+}
+
+.right-top-box{
+    margin-bottom: 5vh;
+}
+
+
+.right-bottom-box{
+    margin-top: 5vh;
+}
+
+p{
+    font-family: "Open Sans";
+    font-size: 20pt;
+}
+
+textarea{
+    width:80%;
+}
