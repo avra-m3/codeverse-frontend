@@ -35,6 +35,10 @@ class CodePage extends Component {
 
     this.props = props;
 
+    this.challengeId = this.props.match.params.problemID
+    console.log(this.challengeId)
+    this.api.setChallengeStatus(this.challengeId, 'InProgress')
+
   }
 
   getProblemInfo() {

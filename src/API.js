@@ -17,6 +17,13 @@ class API {
       })
     }
 
+    setChallengeStatus(challengeId, status) {
+        axios.post(this.config().baseURL+"/challenges/"+challengeId, {'status': status})
+            .then(response => {
+                console.log("CHALLENGE STATUS CHANGED");
+            })
+    }
+
 
     getProblems(callback) {
       axios.get(this.config().baseURL+"/problems")
@@ -34,6 +41,17 @@ class API {
               console.log(problem)
               callback(problem)
       })
+    }
+
+    getChallengeByID(id, callback){
+        axios.get(this.config().baseURL + "/challenges/" + id).then(
+            (response) => {
+                if(response.status !== 200){
+                    return
+                }
+                callback(response.data)
+            }
+        )
     }
 
 
